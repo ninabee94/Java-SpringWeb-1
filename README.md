@@ -36,7 +36,7 @@ Simple Spring Web application for controlling page linking
      //(right click project) -> configure -> convert to Maven project -> edit pom.xml:
      //add these before </project>
      
-   <dependencies>
+     <dependencies>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
@@ -67,7 +67,7 @@ Simple Spring Web application for controlling page linking
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
-	</dependencies>
+     </dependencies>
      
      
 
