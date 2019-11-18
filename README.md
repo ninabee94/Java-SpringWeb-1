@@ -69,6 +69,87 @@ Simple Spring Web application for controlling page linking
 		</dependency>
      </dependencies>
      
+<b>4. Generate web.xml<b>
+	
+     //(right click project) -> Java EE Tools -> Generate Deployment Descriptor Stub -> edit WebContent/WEB-INF/web.xml
+     //add these before </web-app>
+     
+     <servlet>
+        <servlet-name>newservlet</servlet-name>
+        <servlet-class> org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+     </servlet>
+     <servlet-mapping>
+        <servlet-name>newservlet</servlet-name>
+        <url-pattern>/</url-pattern>
+     </servlet-mapping>
+     
+<b>5. Create WebContent/WEB-INF/newservlet-servlet.xml
+	
+     //add these in new line
+     
+     <beans xmlns="http://www.springframework.org/schema/beans"
+	  xmlns:mvc="http://www.springframework.org/schema/mvc"
+	  xmlns:context="http://www.springframework.org/schema/context"
+	  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	  xsi:schemaLocation="
+          http://www.springframework.org/schema/beans     
+          http://www.springframework.org/schema/beans/spring-beans.xsd
+          http://www.springframework.org/schema/mvc 
+          http://www.springframework.org/schema/mvc/spring-mvc.xsd
+          http://www.springframework.org/schema/context 
+          http://www.springframework.org/schema/context/spring-context.xsd">       
+         <mvc:annotation-driven/>
+	  <context:component-scan
+		base-package="controllerPackage" />
+	  <mvc:default-servlet-handler /> 
+	  <bean id="viewResolver"
+		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.JstlView" />
+		<property name="prefix" value="/WEB-INF/jsp/" />
+		<property name="suffix" value=".jsp" />
+	  </bean>	
+     </beans>
+     
+<b>6. Create controllerClass.java (package: controllerPackage)</b>
+	
+     package controllerPackage;
+     import org.springframework.stereotype.Controller;
+     import org.springframework.web.bind.annotation.RequestMapping;
+     import org.springframework.web.servlet.ModelAndView;
+     @Controller
+     public class controllerClass {	
+	 @RequestMapping("/page1")
+         public ModelAndView page1() {
+             String text = "This message isfrom controllerClass<br><br>";
+             return new ModelAndView("page1", "message", text);
+         }
+     }
+     
+<b>7. Create WebContent/index.jsp</b>
+
+     //add in body
+     
+     <h3><a href="page1.html">Click to go to Page1... </a></h3>  
+     
+<b>8. Create WebContent/WEB-INF/jsp/page1.jsp</b>
+
+     //add in body
+     
+     ${message}<br><h3>Welcome to Page1</h3>
+     
+<b>9. Run Project</b>
+
+     (right click project) -> Run as -> Maven Build -> goals: clean install -> apply -> run ->refresh folder target
+     
+<b>10. Start Server</b>
+
+     open server tab -> right click server -> start
+     
+     open http://localhost:8080/Java-SpringWeb-1/
+     
+     
      
 
      
