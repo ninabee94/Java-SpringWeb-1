@@ -27,8 +27,8 @@ Simple Spring Web application for controlling page linking
      
 <b>2. Create New Dynamic Web Project</b>
   
-     Project name: Java-SpringWeb-1<br>
-     Target runtime: Apache Tomcat v9.0<br>
+     Project name: Java-SpringWeb-1
+     Target runtime: Apache Tomcat v9.0
      Configuration: Default Configuration
      
 <b>3. Convert to Maven Project to generate pom.xml</b>
@@ -69,7 +69,7 @@ Simple Spring Web application for controlling page linking
 		</dependency>
      </dependencies>
      
-<b>4. Generate web.xml<b>
+<b>4. Generate web.xml</b>
 	
      //(right click project) -> Java EE Tools -> Generate Deployment Descriptor Stub -> edit WebContent/WEB-INF/web.xml
      //add these before </web-app>
@@ -84,7 +84,7 @@ Simple Spring Web application for controlling page linking
         <url-pattern>/</url-pattern>
      </servlet-mapping>
      
-<b>5. Create WebContent/WEB-INF/newservlet-servlet.xml
+<b>5. Create WebContent/WEB-INF/newservlet-servlet.xml</b>
 	
      //add these in new line
      
