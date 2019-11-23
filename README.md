@@ -1,7 +1,5 @@
 # Java-SpringWeb-1
 
-Simple Spring Web MVC application for page & resource mapping
-
 ![alt text](https://user-images.githubusercontent.com/57636419/69472293-29e78f00-0de3-11ea-8ecb-3a7e4cf87274.JPG)
 ![alt text](https://user-images.githubusercontent.com/57636419/69472296-2f44d980-0de3-11ea-8008-d422f8be92cc.JPG)
 
