@@ -158,17 +158,15 @@ Simple Spring Web MVC application for page & resource mapping
      <h3><a href="index.jsp">Back </a></h3>  
      <h3>Welcome to Page1</h3>
      
-<b>9. Add resources
+<b>9. Add resources</b>
 	
-     //create WebContent/resources/css/new.css
-     
-     body { background-color: lightblue; text-align:center; jusify-content:center; align-items:center; }
+     1. create WebContent/resources/css/new.css :  
+        body { background-color: lightblue; text-align:center; jusify-content:center; align-items:center; }
 
-     //create WebContent/resources/js/new.js
-     
-     function alertme() { alert("Alert from me"); }
+     2. create WebContent/resources/js/new.js :   
+        function alertme() { alert("Alert from me"); }
 
-     //add WebContent/resources/images/new.png
+     3. add WebContent/resources/images/new.png
      
 <b>10. Run Project</b>
 
