@@ -12,6 +12,8 @@ public class controllerClass {
        String text = "This message isfrom controllerClass<br><br>";
        return new ModelAndView("page1", "message", text);
     }
+	
+
 
 
 }

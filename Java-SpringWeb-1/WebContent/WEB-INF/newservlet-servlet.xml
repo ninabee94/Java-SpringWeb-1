@@ -9,13 +9,13 @@
         http://www.springframework.org/schema/mvc 
         http://www.springframework.org/schema/mvc/spring-mvc.xsd
         http://www.springframework.org/schema/context 
-        http://www.springframework.org/schema/context/spring-context.xsd"> 
+        http://www.springframework.org/schema/context/spring-context.xsd">         
         
-        
-	<mvc:annotation-driven/>
-	<context:component-scan
-		base-package="controllerPackage" />
+	<mvc:annotation-driven/>		
 	<mvc:default-servlet-handler />
+	<mvc:resources mapping="/resources/**" location="/resources/" cache-period="0"/>
+	
+	<context:component-scan base-package="controllerPackage" />
  
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
@@ -24,5 +24,5 @@
 		<property name="prefix" value="/WEB-INF/jsp/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
-	
+		
 </beans>
