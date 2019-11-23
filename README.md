@@ -1,6 +1,6 @@
 # Java-SpringWeb-1
 
-Simple Spring Web application for controlling page linking
+Simple Spring Web MVC application for page & resource mapping
 
 ![alt text](https://user-images.githubusercontent.com/57636419/69472293-29e78f00-0de3-11ea-8ecb-3a7e4cf87274.JPG)
 ![alt text](https://user-images.githubusercontent.com/57636419/69472296-2f44d980-0de3-11ea-8008-d422f8be92cc.JPG)
@@ -13,6 +13,12 @@ Simple Spring Web application for controlling page linking
      WebContent/index.jsp
      WebContent/WEB-INF/jsp/page1.jsp
      controllerClass.java  (package: controllerPackage)
+     
+     folder created:
+     
+     WebContent/resources/css
+     WebContent/resources/js
+     WebContent/resources/images
      
 <b>1. Configure Server</b>
 
@@ -99,10 +105,10 @@ Simple Spring Web application for controlling page linking
           http://www.springframework.org/schema/mvc/spring-mvc.xsd
           http://www.springframework.org/schema/context 
           http://www.springframework.org/schema/context/spring-context.xsd">       
-         <mvc:annotation-driven/>
-	  <context:component-scan
-		base-package="controllerPackage" />
+          <mvc:annotation-driven/>
 	  <mvc:default-servlet-handler /> 
+	  <mvc:resources mapping="/resources/**" location="/resources/" cache-period="0"/>
+	  <context:component-scan base-package="controllerPackage" />
 	  <bean id="viewResolver"
 		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
 		<property name="viewClass"
@@ -128,22 +134,47 @@ Simple Spring Web application for controlling page linking
      }
      
 <b>7. Create WebContent/index.jsp</b>
+     
+     //add in head
+     
+     <link href="${pageContext.request.contextPath}/resources/css/new.css" rel="stylesheet">
+     <script src="${pageContext.request.contextPath}/resources/js/new.js"></script>   
 
      //add in body
      
      <h3><a href="page1.html">Click to go to Page1... </a></h3>  
+     <input type="button" onclick="alertme()" value="Click Me" /> <br><br>
+     <img src="${pageContext.request.contextPath}/resources/images/new.png" /> 
      
 <b>8. Create WebContent/WEB-INF/jsp/page1.jsp</b>
 
+     //add in head
+     
+     <link href="${pageContext.request.contextPath}/resources/css/new.css" rel="stylesheet">
+
      //add in body
      
-     ${message}<br><h3>Welcome to Page1</h3>
+     ${message}<br>
+     <h3><a href="index.jsp">Back </a></h3>  
+     <h3>Welcome to Page1</h3>
      
-<b>9. Run Project</b>
+<b>9. Add resources
+	
+     //create WebContent/resources/css/new.css
+     
+     body { background-color: lightblue; text-align:center; jusify-content:center; align-items:center; }
+
+     //create WebContent/resources/js/new.js
+     
+     function alertme() { alert("Alert from me"); }
+
+     //add WebContent/resources/images/new.png
+     
+<b>10. Run Project</b>
 
      (right click project) -> Run as -> Maven Build -> goals: clean install -> apply -> run ->refresh folder target
      
-<b>10. Start Server</b>
+<b>11. Start Server</b>
 
      open server tab -> right click server -> start
      
