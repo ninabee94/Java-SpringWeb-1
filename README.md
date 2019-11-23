@@ -2,8 +2,8 @@
 
 Simple Spring Web application for controlling page linking
 
-![alt text](https://user-images.githubusercontent.com/57636419/69020984-4bb2d180-09f1-11ea-8cca-131ab132da20.JPG)
-![alt text](https://user-images.githubusercontent.com/57636419/69020995-50778580-09f1-11ea-81ee-47371b2fe30e.JPG)
+![alt text](https://user-images.githubusercontent.com/57636419/69472293-29e78f00-0de3-11ea-8ecb-3a7e4cf87274.JPG)
+![alt text](https://user-images.githubusercontent.com/57636419/69472296-2f44d980-0de3-11ea-8008-d422f8be92cc.JPG)
 
      file created :
      
